@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réservation — BéninStay</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================== -->
+  <!-- NAVBAR -->
+  <!-- ============================== -->
+  <header class="navbar navbar--solid" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Bénin<span>Stay</span></a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="appartements.html">Appartements</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="appartements.html" class="btn btn--gold navbar__cta">Réserver</a>
+        <button class="navbar__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================== -->
+  <!-- EN-TÊTE DE PAGE -->
+  <!-- ============================== -->
+  <section class="page-header page-header--compact">
+    <div class="page-header__inner">
+      <p class="eyebrow eyebrow--light">Dernière étape</p>
+      <h1>Finaliser votre réservation</h1>
+      <p>Vérifiez les détails ci-dessous, puis confirmez directement par WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- ÉTAPES DE RÉSERVATION -->
+  <!-- ============================== -->
+  <section class="reservation">
+
+    <!-- Étape 1 : formulaire visiteur -->
+    <div class="reservation__form" id="reservationStep">
+      <h2>Vos informations</h2>
+      <form id="reservationForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="resName">Nom complet</label>
+            <input type="text" id="resName" name="nom" placeholder="Ex : Aïcha Dossou" required>
+          </div>
+          <div class="form-field">
+            <label for="resPhone">Téléphone</label>
+            <input type="tel" id="resPhone" name="telephone" placeholder="Ex : 97 00 00 00" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="resCheckin">Date d'arrivée</label>
+            <input type="date" id="resCheckin" name="arrivee" required>
+          </div>
+          <div class="form-field">
+            <label for="resCheckout">Date de départ</label>
+            <input type="date" id="resCheckout" name="depart" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="resGuests">Nombre de voyageurs</label>
+          <select id="resGuests" name="voyageurs">
+            <option value="1">1 voyageur</option>
+            <option value="2" selected>2 voyageurs</option>
+            <option value="3">3 voyageurs</option>
+            <option value="4">4 voyageurs</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="resMessage">Message (optionnel)</label>
+          <textarea id="resMessage" name="message" rows="3" placeholder="Une précision à ajouter pour votre séjour ?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--lg reservation__submit">Voir le récapitulatif</button>
+      </form>
+    </div>
+
+    <!-- Étape 2 : récapitulatif (masqué au départ, affiché après soumission du formulaire) -->
+    <div class="reservation__summary" id="reservationSummary" hidden>
+      <div class="summary-card">
+        <h2>Récapitulatif de la réservation</h2>
+
+        <div class="summary-apt">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=200&q=80" alt="Résidence Aïda">
+          <div>
+            <h3>Résidence Aïda</h3>
+            <p>📍 Fidjrossè, Cotonou</p>
+          </div>
+        </div>
+
+        <dl class="summary-list">
+          <div>
+            <dt>Voyageur</dt>
+            <dd id="summaryName">—</dd>
+          </div>
+          <div>
+            <dt>Téléphone</dt>
+            <dd id="summaryPhone">—</dd>
+          </div>
+          <div>
+            <dt>Arrivée</dt>
+            <dd id="summaryCheckin">—</dd>
+          </div>
+          <div>
+            <dt>Départ</dt>
+            <dd id="summaryCheckout">—</dd>
+          </div>
+          <div>
+            <dt>Voyageurs</dt>
+            <dd id="summaryGuests">—</dd>
+          </div>
+          <div>
+            <dt>Nuits</dt>
+            <dd id="summaryNights">—</dd>
+          </div>
+        </dl>
+
+        <div class="summary-total">
+          <span>Total estimé</span>
+          <strong id="summaryTotal">— FCFA</strong>
+        </div>
+
+        <a href="#" id="whatsappConfirm" class="btn btn--gold btn--lg summary-card__cta" target="_blank" rel="noopener">
+          Confirmer via WhatsApp
+        </a>
+        <button type="button" id="summaryEdit" class="link-arrow summary-card__edit">← Modifier mes informations</button>
+
+        <p class="summary-card__note">
+          Aucun paiement n'est effectué sur le site. La confirmation finale se fait
+          directement avec notre équipe par WhatsApp.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================== -->
+  <!-- FOOTER -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo navbar__logo--footer">Bénin<span>Stay</span></a>
+        <p>La plateforme de référence pour réserver un appartement dans le Littoral et l'Atlantique au Bénin.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="WhatsApp">Wa</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="appartements.html">Appartements</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Destinations</h4>
+        <a href="appartements.html">Cotonou</a>
+        <a href="appartements.html">Abomey-Calavi</a>
+        <a href="appartements.html">Ouidah</a>
+        <a href="appartements.html">Porto-Novo</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+2290163076934">+229 01 63 07 69 34</a>
+        <a href="mailto:hiluxgatty44@gmail.com">hiluxgatty44@gmail.com</a>
+        <span>Cotonou, Bénin</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 BéninStay. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Résidence Aïda — BéninStay</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================== -->
+  <!-- NAVBAR -->
+  <!-- ============================== -->
+  <header class="navbar navbar--solid" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Bénin<span>Stay</span></a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="appartements.html" class="active">Appartements</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="reservation.html" class="btn btn--gold navbar__cta">Réserver</a>
+        <button class="navbar__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================== -->
+  <!-- FIL D'ARIANE -->
+  <!-- ============================== -->
+  <div class="breadcrumb">
+    <div class="breadcrumb__inner">
+      <a href="index.html">Accueil</a>
+      <span>/</span>
+      <a href="appartements.html">Appartements</a>
+      <span>/</span>
+      <span class="breadcrumb__current">Résidence Aïda</span>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- GALERIE PRINCIPALE -->
+  <!-- ============================== -->
+  <section class="detail-gallery">
+    <div class="detail-gallery__grid" id="detailGallery">
+      <button class="detail-gallery__main" data-full="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=80" alt="Salon de la Résidence Aïda">
+      </button>
+      <button class="detail-gallery__thumb" data-full="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80" alt="Salon vue 2">
+      </button>
+      <button class="detail-gallery__thumb" data-full="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=600&q=80" alt="Chambre">
+      </button>
+      <button class="detail-gallery__thumb" data-full="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=600&q=80" alt="Cuisine">
+      </button>
+      <button class="detail-gallery__thumb detail-gallery__thumb--more" data-full="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80" alt="Terrasse">
+        <span>+3 photos</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- CONTENU : INFOS + RÉCAP RÉSERVATION -->
+  <!-- ============================== -->
+  <section class="detail">
+    <div class="detail__main">
+
+      <div class="detail__head">
+        <div>
+          <p class="eyebrow">Fidjrossè, Cotonou</p>
+          <h1>Résidence Aïda</h1>
+          <p class="detail__meta">2 chambres · 1 salle de bain · 4 voyageurs · 65 m²</p>
+        </div>
+        <div class="detail__rating">
+          <span class="detail__rating-score">★ 4.9</span>
+          <span class="detail__rating-count">128 avis</span>
+        </div>
+      </div>
+
+      <div class="detail__divider"></div>
+
+      <div class="detail__block">
+        <h2>Description</h2>
+        <p>
+          Appartement lumineux au cœur de Fidjrossè, à quelques minutes de la plage et
+          des principaux axes de Cotonou. Idéal pour un séjour en couple, en famille ou
+          entre amis : salon spacieux, cuisine équipée et terrasse privée pour profiter
+          des soirées douces du littoral.
+        </p>
+      </div>
+
+      <div class="detail__block">
+        <h2>Équipements</h2>
+        <ul class="amenities">
+          <li>📶 Wi-Fi haut débit</li>
+          <li>❄️ Climatisation</li>
+          <li>🍳 Cuisine équipée</li>
+          <li>🚗 Parking privé</li>
+          <li>🔌 Groupe électrogène</li>
+          <li>🧺 Lave-linge</li>
+          <li>📺 Télévision</li>
+          <li>🛡️ Sécurité 24h/24</li>
+        </ul>
+      </div>
+
+      <div class="detail__block">
+        <h2>Disponibilité</h2>
+        <p class="detail__availability">
+          <span class="dot dot--available"></span>
+          Disponible à partir du <strong>15 août 2026</strong>
+        </p>
+      </div>
+
+      <div class="detail__block">
+        <h2>Avis clients</h2>
+        <div class="testimonials testimonials--detail">
+          <article class="testimonial">
+            <p class="testimonial__stars">★★★★★</p>
+            <p class="testimonial__text">« Réservation simple et appartement conforme aux photos. Le quartier était calme et bien situé. »</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">EA</div>
+              <div>
+                <strong>Estelle A.</strong>
+                <span>Cotonou</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <p class="testimonial__stars">★★★★★</p>
+            <p class="testimonial__text">« Accueil chaleureux, tout était propre et fonctionnel. Je recommande vivement. »</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">MK</div>
+              <div>
+                <strong>Marius K.</strong>
+                <span>Abomey-Calavi</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte récap réservation, fixe sur desktop -->
+    <aside class="detail__booking">
+      <div class="booking-card">
+        <p class="booking-card__price"><span>35 000</span> FCFA / nuit</p>
+
+        <div class="booking-card__dates">
+          <div class="booking-card__field">
+            <label for="detailCheckin">Arrivée</label>
+            <input type="date" id="detailCheckin">
+          </div>
+          <div class="booking-card__field">
+            <label for="detailCheckout">Départ</label>
+            <input type="date" id="detailCheckout">
+          </div>
+        </div>
+
+        <div class="booking-card__field">
+          <label for="detailGuests">Voyageurs</label>
+          <select id="detailGuests">
+            <option value="1">1 voyageur</option>
+            <option value="2" selected>2 voyageurs</option>
+            <option value="3">3 voyageurs</option>
+            <option value="4">4 voyageurs</option>
+          </select>
+        </div>
+
+        <a href="reservation.html" class="btn btn--gold booking-card__cta">Réserver maintenant</a>
+        <p class="booking-card__note">Aucun paiement en ligne requis à cette étape.</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ============================== -->
+  <!-- LIGHTBOX (agrandissement des photos de la galerie) -->
+  <!-- ============================== -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">✕</button>
+    <img src="" alt="" id="lightboxImage">
+  </div>
+
+  <!-- ============================== -->
+  <!-- FOOTER -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo navbar__logo--footer">Bénin<span>Stay</span></a>
+        <p>La plateforme de référence pour réserver un appartement dans le Littoral et l'Atlantique au Bénin.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="WhatsApp">Wa</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="appartements.html">Appartements</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Destinations</h4>
+        <a href="appartements.html">Cotonou</a>
+        <a href="appartements.html">Abomey-Calavi</a>
+        <a href="appartements.html">Ouidah</a>
+        <a href="appartements.html">Porto-Novo</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+2290163076934">+229 01 63 07 63 34</a>
+        <a href="hiluxgatty44@gmail.com">hiluxgatty44@gmail.com</a>
+        <span>Cotonou, Bénin</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 BéninStay. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BéninStay — Votre prochain séjour commence ici</title>
+
+  <!-- Polices Google Fonts : Fraunces (titres) + Work Sans (texte) + IBM Plex Mono (prix / données) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============================== -->
+  <!-- NAVBAR -->
+  <!-- ============================== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Bénin<span>Stay</span></a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="appartements.html">Appartements</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="appartements.html" class="btn btn--gold navbar__cta">Réserver</a>
+        <!-- Bouton menu mobile (le comportement JS sera ajouté à l'étape suivante) -->
+        <button class="navbar__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================== -->
+  <!-- HERO -->
+  <!-- ============================== -->
+  <section class="hero">
+    <div class="hero__media" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="eyebrow eyebrow--light">Littoral &amp; Atlantique — Bénin</p>
+      <h1 class="hero__title">Votre prochain séjour<br> commence ici.</h1>
+      <p class="hero__subtitle">Découvrez et réservez des appartements confortables dans le Littoral et l’Atlantique.
+      </p>
+      <a href="appartements.html" class="btn btn--gold btn--lg">Explorer les appartements</a>
+    </div>
+
+    <!-- Signature visuelle : la ligne de côte du golfe de Guinée, qui sépare le hero du reste du site -->
+    <svg class="hero__coastline" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,64 C240,110 480,10 720,48 C960,86 1200,20 1440,64 L1440,120 L0,120 Z"></path>
+    </svg>
+  </section>
+
+  <!-- ============================== -->
+  <!-- BARRE DE RECHERCHE -->
+  <!-- ============================== -->
+  <section class="search-wrap">
+    <form class="search-bar" id="searchForm">
+      <div class="search-field">
+        <label for="searchLocation">Localisation</label>
+        <select id="searchLocation" name="localisation">
+          <option value="">Toutes les villes</option>
+          <option value="cotonou">Cotonou</option>
+          <option value="abomey-calavi">Abomey-Calavi</option>
+          <option value="ouidah">Ouidah</option>
+          <option value="porto-novo">Porto-Novo</option>
+          <option value="grand-popo">Grand-Popo</option>
+        </select>
+      </div>
+
+      <div class="search-divider" aria-hidden="true"></div>
+
+      <div class="search-field">
+        <label for="searchCheckin">Arrivée</label>
+        <input type="date" id="searchCheckin" name="arrivee">
+      </div>
+
+      <div class="search-divider" aria-hidden="true"></div>
+
+      <div class="search-field">
+        <label for="searchCheckout">Départ</label>
+        <input type="date" id="searchCheckout" name="depart">
+      </div>
+
+      <div class="search-divider" aria-hidden="true"></div>
+
+      <div class="search-field">
+        <label for="searchGuests">Voyageurs</label>
+        <select id="searchGuests" name="voyageurs">
+          <option value="1">1 voyageur</option>
+          <option value="2" selected>2 voyageurs</option>
+          <option value="3">3 voyageurs</option>
+          <option value="4">4 voyageurs</option>
+          <option value="5+">5 voyageurs et +</option>
+        </select>
+      </div>
+
+      <button type="submit" class="search-submit" aria-label="Rechercher">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+          <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <span>Rechercher</span>
+      </button>
+    </form>
+  </section>
+
+  <!-- ============================== -->
+  <!-- APPARTEMENTS POPULAIRES -->
+  <!-- ============================== -->
+  <section class="section" id="appartements">
+    <div class="section__head">
+      <div>
+
+        <h2 class="section__title">Appartements populaires</h2>
+      </div>
+      <a href="appartements.html" class="link-arrow">Voir tous les appartements →</a>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Carte appartement 1 -->
+      <article class="apt-card">
+        <div class="apt-card__media">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
+            alt="Appartement moderne à Cotonou">
+          <span class="apt-card__badge">Coup de cœur</span>
+        </div>
+        <div class="apt-card__body">
+          <div class="apt-card__top">
+            <h3>Résidence Aïda</h3>
+            <span class="apt-card__rating">★ 4.9</span>
+          </div>
+          <p class="apt-card__location">📍 Fidjrossè, Cotonou</p>
+          <p class="apt-card__meta">2 chambres · 4 voyageurs</p>
+          <div class="apt-card__bottom">
+            <p class="apt-card__price"><span>35 000</span> FCFA / nuit</p>
+            <div class="apt-card__actions">
+              <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+              <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Carte appartement 2 -->
+      <article class="apt-card">
+        <div class="apt-card__media">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"
+            alt="Appartement avec vue à Abomey-Calavi">
+        </div>
+        <div class="apt-card__body">
+          <div class="apt-card__top">
+            <h3>Villa Golfe Bleu</h3>
+            <span class="apt-card__rating">★ 4.7</span>
+          </div>
+          <p class="apt-card__location">📍 Godomey, Abomey-Calavi</p>
+          <p class="apt-card__meta">3 chambres · 6 voyageurs</p>
+          <div class="apt-card__bottom">
+            <p class="apt-card__price"><span>52 000</span> FCFA / nuit</p>
+            <div class="apt-card__actions">
+              <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+              <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Carte appartement 3 -->
+      <article class="apt-card">
+        <div class="apt-card__media">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80"
+            alt="Studio cosy à Ouidah">
+        </div>
+        <div class="apt-card__body">
+          <div class="apt-card__top">
+            <h3>Studio Route des Pêches</h3>
+            <span class="apt-card__rating">★ 4.8</span>
+          </div>
+          <p class="apt-card__location">📍 Ouidah</p>
+          <p class="apt-card__meta">1 chambre · 2 voyageurs</p>
+          <div class="apt-card__bottom">
+            <p class="apt-card__price"><span>22 000</span> FCFA / nuit</p>
+            <div class="apt-card__actions">
+              <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+              <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- DESTINATIONS -->
+  <!-- ============================== -->
+  <section class="section section--tint" id="destinations">
+    <div class="section__head">
+      <div>
+
+        <h2 class="section__title">Nos destinations</h2>
+      </div>
+    </div>
+
+    <div class="dest-grid">
+      <a href="appartements.html" class="dest-card dest-card--lg">
+        <img src="https://images.unsplash.com/photo-1580746738099-8b9a5137ac93?auto=format&fit=crop&w=900&q=80"
+          alt="Cotonou">
+        <div class="dest-card__label">
+          <h3>Cotonou</h3>
+          <span>48 logements</span>
+        </div>
+      </a>
+      <a href="appartements.html" class="dest-card">
+        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80"
+          alt="Abomey-Calavi">
+        <div class="dest-card__label">
+          <h3>Abomey-Calavi</h3>
+          <span>22 logements</span>
+        </div>
+      </a>
+      <a href="appartements.html" class="dest-card">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=600&q=80"
+          alt="Ouidah">
+        <div class="dest-card__label">
+          <h3>Ouidah</h3>
+          <span>15 logements</span>
+        </div>
+      </a>
+      <a href="appartements.html" class="dest-card">
+        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=80"
+          alt="Porto-Novo">
+        <div class="dest-card__label">
+          <h3>Porto-Novo</h3>
+          <span>9 logements</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- POURQUOI BÉNINSTAY -->
+  <!-- ============================== -->
+  <section class="section" id="apropos">
+    <div class="section__head">
+      <div>
+
+        <h2 class="section__title">Pourquoi choisir BéninStay ?</h2>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature__icon">🔐</div>
+        <h3>Réservation sécurisée</h3>
+        <p>Vos réservations et vos échanges sont protégés à chaque étape.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">🏠</div>
+        <h3>Appartements vérifiés</h3>
+        <p>Chaque logement est visité et validé avant sa mise en ligne.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">💰</div>
+        <h3>Prix transparents</h3>
+        <p>Aucun frais caché : le prix affiché est le prix payé.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">📞</div>
+        <h3>Assistance disponible</h3>
+        <p>Une équipe locale joignable avant, pendant et après votre séjour.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- GALERIE -->
+  <!-- ============================== -->
+  <section class="section section--tint">
+    <div class="section__head">
+      <div>
+
+        <h2 class="section__title">Galerie</h2>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery__item"><img
+          src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80"
+          alt="Salon d'appartement"></div>
+      <div class="gallery__item"><img
+          src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=600&q=80"
+          alt="Chambre lumineuse"></div>
+      <div class="gallery__item"><img
+          src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=600&q=80"
+          alt="Cuisine équipée"></div>
+      <div class="gallery__item"><img
+          src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=600&q=80"
+          alt="Terrasse extérieure"></div>
+      <div class="gallery__item"><img
+          src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80"
+          alt="Salle de bain moderne"></div>
+      <div class="gallery__item"><img
+          src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80"
+          alt="Vue du balcon"></div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- AVIS CLIENTS -->
+  <!-- ============================== -->
+  <section class="section">
+    <div class="section__head">
+      <div>
+
+        <h2 class="section__title">Avis clients</h2>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <article class="testimonial">
+        <p class="testimonial__stars">★★★★★</p>
+        <p class="testimonial__text">« Réservation simple et appartement conforme aux photos. Le quartier était calme et
+          bien situé. »</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">EA</div>
+          <div>
+            <strong>Estelle A.</strong>
+            <span>Cotonou</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <p class="testimonial__stars">★★★★★</p>
+        <p class="testimonial__text">« L'équipe a répondu très vite à toutes mes questions avant l'arrivée. Je
+          recommande. »</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">MK</div>
+          <div>
+            <strong>Marius K.</strong>
+            <span>Abomey-Calavi</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <p class="testimonial__stars">★★★★☆</p>
+        <p class="testimonial__text">« Très bon rapport qualité-prix pour un séjour à Ouidah. On y retournera. »</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">SD</div>
+          <div>
+            <strong>Sandra D.</strong>
+            <span>Porto-Novo</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- CALL TO ACTION -->
+  <!-- ============================== -->
+  <section class="cta">
+    <div class="cta__inner">
+      <h2>Prêt à trouver votre appartement ?</h2>
+      <p>Des dizaines de logements vérifiés vous attendent dans le Littoral et l'Atlantique.</p>
+      <a href="appartements.html" class="btn btn--gold btn--lg">Commencer ma recherche</a>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FOOTER -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo navbar__logo--footer">Bénin<span>Stay</span></a>
+        <p>La plateforme de référence pour réserver un appartement dans le Littoral et l'Atlantique au Bénin.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="WhatsApp">Wa</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="appartements.html">Appartements</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Destinations</h4>
+        <a href="appartements.html">Cotonou</a>
+        <a href="appartements.html">Abomey-Calavi</a>
+        <a href="appartements.html">Ouidah</a>
+        <a href="appartements.html">Porto-Novo</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+2290163076934">+229 63 07 69 34</a>
+        <a href="hiluxgatty44@gmail.com">hiluxgatty44@gmail.com"</a>
+        <span>Cotonou, Bénin</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 BéninStay. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appartements — BéninStay</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================== -->
+  <!-- NAVBAR (identique à index.html, lien "Appartements" actif) -->
+  <!-- ============================== -->
+  <header class="navbar navbar--solid" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Bénin<span>Stay</span></a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="appartements.html" class="active">Appartements</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="appartements.html" class="btn btn--gold navbar__cta">Réserver</a>
+        <button class="navbar__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================== -->
+  <!-- EN-TÊTE DE PAGE -->
+  <!-- ============================== -->
+  <section class="page-header">
+    <div class="page-header__inner">
+      <p class="eyebrow eyebrow--light">Littoral &amp; Atlantique</p>
+      <h1>Tous nos appartements</h1>
+      <p>Filtrez par ville, prix ou nombre de chambres pour trouver le logement qui vous correspond.</p>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- LISTING : FILTRES + RÉSULTATS -->
+  <!-- ============================== -->
+  <section class="listing">
+
+    <!-- Barre de filtres -->
+    <aside class="filters" id="filters">
+      <div class="filters__head">
+        <h2>Filtres</h2>
+        <button type="button" id="filtersReset" class="link-arrow">Réinitialiser</button>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterCity">Ville</label>
+        <select id="filterCity">
+          <option value="">Toutes les villes</option>
+          <option value="cotonou">Cotonou</option>
+          <option value="abomey-calavi">Abomey-Calavi</option>
+          <option value="ouidah">Ouidah</option>
+          <option value="porto-novo">Porto-Novo</option>
+          <option value="grand-popo">Grand-Popo</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterRooms">Chambres</label>
+        <select id="filterRooms">
+          <option value="">Peu importe</option>
+          <option value="1">1 chambre</option>
+          <option value="2">2 chambres</option>
+          <option value="3">3 chambres</option>
+          <option value="4">4 chambres et +</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterPrice">Prix maximum / nuit</label>
+        <input type="range" id="filterPrice" min="15000" max="80000" step="1000" value="80000">
+        <div class="filter-price__value">Jusqu'à <span id="filterPriceValue">80 000</span> FCFA</div>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterSort">Trier par</label>
+        <select id="filterSort">
+          <option value="recommande">Recommandés</option>
+          <option value="prix-asc">Prix croissant</option>
+          <option value="prix-desc">Prix décroissant</option>
+          <option value="note">Meilleures notes</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- Résultats -->
+    <div class="listing__results">
+      <div class="listing__count">
+        <span id="resultsCount">9</span> appartements trouvés
+      </div>
+
+      <div class="cards-grid cards-grid--listing" id="apartmentsGrid">
+
+        <!-- Carte 1 -->
+        <article class="apt-card" data-city="cotonou" data-rooms="2" data-price="35000" data-rating="4.9">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Résidence Aïda, Cotonou">
+            <span class="apt-card__badge">Coup de cœur</span>
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Résidence Aïda</h3>
+              <span class="apt-card__rating">★ 4.9</span>
+            </div>
+            <p class="apt-card__location">📍 Fidjrossè, Cotonou</p>
+            <p class="apt-card__meta">2 chambres · 4 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>35 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 2 -->
+        <article class="apt-card" data-city="abomey-calavi" data-rooms="3" data-price="52000" data-rating="4.7">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Villa Golfe Bleu, Abomey-Calavi">
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Villa Golfe Bleu</h3>
+              <span class="apt-card__rating">★ 4.7</span>
+            </div>
+            <p class="apt-card__location">📍 Godomey, Abomey-Calavi</p>
+            <p class="apt-card__meta">3 chambres · 6 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>52 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 3 -->
+        <article class="apt-card" data-city="ouidah" data-rooms="1" data-price="22000" data-rating="4.8">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Studio Route des Pêches, Ouidah">
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Studio Route des Pêches</h3>
+              <span class="apt-card__rating">★ 4.8</span>
+            </div>
+            <p class="apt-card__location">📍 Ouidah</p>
+            <p class="apt-card__meta">1 chambre · 2 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>22 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 4 -->
+        <article class="apt-card" data-city="cotonou" data-rooms="1" data-price="18000" data-rating="4.5">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80" alt="Studio Akpakpa, Cotonou">
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Studio Akpakpa</h3>
+              <span class="apt-card__rating">★ 4.5</span>
+            </div>
+            <p class="apt-card__location">📍 Akpakpa, Cotonou</p>
+            <p class="apt-card__meta">1 chambre · 2 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>18 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 5 -->
+        <article class="apt-card" data-city="porto-novo" data-rooms="2" data-price="28000" data-rating="4.6">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="Maison Royale, Porto-Novo">
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Maison Royale</h3>
+              <span class="apt-card__rating">★ 4.6</span>
+            </div>
+            <p class="apt-card__location">📍 Centre-ville, Porto-Novo</p>
+            <p class="apt-card__meta">2 chambres · 4 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>28 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 6 -->
+        <article class="apt-card" data-city="grand-popo" data-rooms="4" data-price="75000" data-rating="4.9">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Villa Plage, Grand-Popo">
+            <span class="apt-card__badge">Coup de cœur</span>
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Villa Plage</h3>
+              <span class="apt-card__rating">★ 4.9</span>
+            </div>
+            <p class="apt-card__location">📍 Bord de mer, Grand-Popo</p>
+            <p class="apt-card__meta">4 chambres · 8 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>75 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 7 -->
+        <article class="apt-card" data-city="cotonou" data-rooms="3" data-price="48000" data-rating="4.4">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" alt="Appartement Haie Vive, Cotonou">
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Appartement Haie Vive</h3>
+              <span class="apt-card__rating">★ 4.4</span>
+            </div>
+            <p class="apt-card__location">📍 Haie Vive, Cotonou</p>
+            <p class="apt-card__meta">3 chambres · 5 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>48 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 8 -->
+        <article class="apt-card" data-city="abomey-calavi" data-rooms="1" data-price="16000" data-rating="4.3">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" alt="Studio Calavi Campus">
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Studio Calavi Campus</h3>
+              <span class="apt-card__rating">★ 4.3</span>
+            </div>
+            <p class="apt-card__location">📍 Campus, Abomey-Calavi</p>
+            <p class="apt-card__meta">1 chambre · 2 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>16 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 9 -->
+        <article class="apt-card" data-city="ouidah" data-rooms="2" data-price="31000" data-rating="4.7">
+          <div class="apt-card__media">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80" alt="Maison des Artistes, Ouidah">
+          </div>
+          <div class="apt-card__body">
+            <div class="apt-card__top">
+              <h3>Maison des Artistes</h3>
+              <span class="apt-card__rating">★ 4.7</span>
+            </div>
+            <p class="apt-card__location">📍 Centre historique, Ouidah</p>
+            <p class="apt-card__meta">2 chambres · 4 voyageurs</p>
+            <div class="apt-card__bottom">
+              <p class="apt-card__price"><span>31 000</span> FCFA / nuit</p>
+              <div class="apt-card__actions">
+                <a href="details.html" class="btn btn--ghost btn--sm">Détails</a>
+                <a href="reservation.html" class="btn btn--gold btn--sm">Réserver</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Message affiché si aucun résultat ne correspond aux filtres -->
+      <p class="listing__empty" id="listingEmpty" hidden>
+        Aucun appartement ne correspond à ces critères. Essayez d'élargir votre recherche.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- FOOTER (identique à index.html) -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo navbar__logo--footer">Bénin<span>Stay</span></a>
+        <p>La plateforme de référence pour réserver un appartement dans le Littoral et l'Atlantique au Bénin.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="WhatsApp">Wa</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="appartements.html">Appartements</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Destinations</h4>
+        <a href="appartements.html">Cotonou</a>
+        <a href="appartements.html">Abomey-Calavi</a>
+        <a href="appartements.html">Ouidah</a>
+        <a href="appartements.html">Porto-Novo</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+2290163076934">+229 63 07 69 34</a>
+        <a href="hiluxgatty44@gmail.com">hiluxgatty44@gmail.com</a>
+        <span>Cotonou, Bénin</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 BéninStay. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
